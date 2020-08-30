@@ -2,19 +2,22 @@
 
 def format_address(address_string):
   # Declare variables
-
+  house_number = 0
+  street_name = ""
   # Separate the address string into parts
-
+  separated_address = address_string.split()
   # Traverse through the address parts
-  for __:
+  for address in separated_address:
     # Determine if the address part is the
     # house number or part of the street name
-
+    if address.isnumeric():
+      house_number = address
   # Does anything else need to be done 
   # before returning the result?
-  
+    else:
+      street_name += address + " "
   # Return the formatted string  
-  return "house number {} on street named {}".format(__)
+  return "house number {} on street named {}".format(house_number, street_name)
 
 print(format_address("123 Main Street"))
 # Should print: "house number 123 on street named Main Street"
